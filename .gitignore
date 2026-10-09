@@ -1,0 +1,16 @@
+# Project tracking — privé
+00-commercial/
+01-brief/
+02-design/
+03-livraison/
+99-retrospective.md
+
+# Local
+.claude/
+.vercel
+.DS_Store
+*.log
+*.zip
+.env
+.env.local
+node_modules/
