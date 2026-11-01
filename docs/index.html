@@ -62,15 +62,22 @@ em,.it{font-style:normal}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,32,28,.55) 0%,rgba(35,32,28,.22) 9%,rgba(35,32,28,.06) 17%,rgba(35,32,28,.4) 26%,rgba(35,32,28,.6) 34%,rgba(35,32,28,.8) 62%,rgba(35,32,28,.9) 100%)}
 @media (min-width:900px){.hero::after{background:linear-gradient(180deg,rgba(35,32,28,.55) 0%,rgba(35,32,28,.24) 10%,rgba(35,32,28,.08) 18%,rgba(35,32,28,.34) 28%,rgba(35,32,28,.52) 36%,rgba(35,32,28,.74) 50%,rgba(35,32,28,.82) 78%,rgba(35,32,28,.9) 100%)}}
 .hero>*:not(.hero__img){position:relative;z-index:1}
+.hero>.top{position:fixed;top:0;left:0;right:0;z-index:50;transition:background-color .3s ease,padding .3s ease}
 .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px var(--gut);max-width:none}
-.top__name{font-size:1.5rem;color:var(--creme);text-decoration:none;text-shadow:0 1px 14px rgba(20,18,15,.5)}
+.top.is-fixe{background:rgba(35,32,28,.94);padding-top:8px;padding-bottom:8px;box-shadow:0 1px 0 rgba(243,236,223,.12)}
+.top__name{font-size:1.15rem;white-space:nowrap;color:var(--creme);text-decoration:none;text-shadow:0 1px 14px rgba(20,18,15,.5)}
 .top nav{display:none;gap:26px;font-size:1.35rem}
-.top nav a{color:var(--creme);text-decoration:none}
+.top nav a{color:var(--creme);text-decoration:none;text-decoration-thickness:2px;text-underline-offset:7px}
 .top nav a:hover{text-decoration:underline}
-.top__mail{color:var(--creme);font-size:1.35rem;min-height:44px;display:inline-flex;align-items:center;text-shadow:0 1px 14px rgba(20,18,15,.5)}
+.top nav a[aria-current]{text-decoration:underline;text-decoration-color:#C9773F}
+html{scroll-padding-top:76px}
+@media (max-width:379px){.top{gap:12px}.top__name,.top__mail{font-size:1rem}}
+@media (min-width:900px){.top__name{font-size:1.25rem}.top nav{font-size:1.1rem;gap:18px}.top__mail{font-size:1.1rem}}
+@media (min-width:1150px){.top__name{font-size:1.5rem}.top nav{font-size:1.35rem;gap:26px}.top__mail{font-size:1.35rem}}
+.top__mail{color:var(--creme);font-size:1.15rem;white-space:nowrap;min-height:44px;display:inline-flex;align-items:center;text-shadow:0 1px 14px rgba(20,18,15,.5)}
 .hero__body{margin-top:auto;padding-bottom:clamp(36px,7vw,80px);width:100%}
 .surtitre{font-size:clamp(1.125rem,2.85vw,2.1rem);letter-spacing:.07em;text-transform:uppercase;font-weight:600;margin-bottom:26px;opacity:1;text-shadow:0 2px 20px rgba(20,18,15,.85),0 1px 3px rgba(20,18,15,.7)}
-.hero h1{font-size:clamp(3.8rem,16vw,11rem);line-height:.88;letter-spacing:-.012em;font-variation-settings:"opsz" 72}
+.hero h1{font-size:clamp(2.6rem,9vw,6.8rem);line-height:.95;letter-spacing:-.012em;font-variation-settings:"opsz" 72}
 .hero h1 em{display:block;padding-left:.42em}
 .hero__row{display:grid;gap:26px;margin-top:clamp(24px,4vw,44px);align-items:end}
 .hero__accroche{font-size:clamp(1.25rem,2.4vw,1.55rem);line-height:1.4;max-width:30ch}
@@ -128,6 +135,8 @@ em,.it{font-style:normal}
 /* 5. DÉROULÉ */
 .deroule .head{display:grid;gap:26px}
 .deroule .head p{max-width:40ch}
+.deroule{padding-bottom:0}
+.cadre{padding-top:clamp(56px,7vw,96px)}
 .deroule .band{margin-top:clamp(40px,6vw,72px);aspect-ratio:16/9;object-position:50% 62%}
 /* Frise : ligne verticale en segments, numéro posé sur la ligne, alternance gauche / droite en desktop */
 .steps{--ligne:24px;--h3:clamp(2rem,3.6vw,2.75rem);--gap-etape:clamp(24px,3vw,44px);--num:calc(var(--h3)*.51);--ligne-depart:calc(108px + var(--num));list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;position:relative;display:grid;gap:var(--gap-etape)}
@@ -247,18 +256,18 @@ em,.it{font-style:normal}
 <header class="hero">
  <img class="hero__img" src="img/photo1-option1.webp" width="1600" height="900" alt="Un agriculteur de dos, casquette et veste de travail, face à un champ de maïs et à l’horizon des collines" fetchpriority="high">
  <div class="top">
-  <a class="top__name" href="#">En quête d’avenir</a>
+  <a class="top__name" href="#">Résidence d’agriculteur·rices</a>
   <nav aria-label="Sections">
    <a href="#residence">La résidence</a>
    <a href="#prochaine">Prochaine date</a>
-   <a href="#histoire">Histoire</a>
-   <a href="#equipe">Qui sommes-nous</a>
+   <a href="#chemin">Le chemin</a>
+   <a href="#experience">L’expérience</a>
   </nav>
   <a class="top__mail" href="#contact">Nous écrire</a>
  </div>
  <div class="hero__body wrap">
-  <p class="surtitre">Résidences pour agricultrices et agriculteurs</p>
-  <h1>En quête <em>d’avenir</em></h1>
+  <p class="surtitre">En quête d’avenir</p>
+  <h1>Résidence d’agricultrices <em>et d’agriculteurs</em></h1>
   <div class="hero__row">
    <p class="hero__accroche">Deux jours pour s’arrêter, prendre du recul et regarder autrement le chemin devant soi.</p>
    <div class="hero__cta">
@@ -290,7 +299,7 @@ em,.it{font-style:normal}
 </section>
 
 <!-- 3. PROPOSITION -->
-<section class="sect prop">
+<section class="sect prop" data-nav="residence">
  <div class="wrap">
   <div class="grid">
    <div>
@@ -329,13 +338,12 @@ em,.it{font-style:normal}
 </section>
 
 <!-- 5. DÉROULÉ -->
-<section class="sect deroule">
+<section class="sect deroule" id="chemin">
  <div class="wrap">
   <div class="head">
    <h2 class="h2">Deux jours, <em>un chemin</em></h2>
    <p class="lead">Il n’y a pas de parcours tout tracé. Pendant deux jours, différentes propositions permettent d’avancer progressivement, à partir de ce que chacun·e vit.</p>
   </div>
-  <img class="photo band" src="img/photo3-option2a.webp" width="1600" height="1068" loading="lazy" alt="Un petit groupe de personnes marchant de dos sur un chemin herbeux">
   <ol class="steps">
    <li class="step reveal">
     <span class="step__num" aria-hidden="true">1.</span>
@@ -387,14 +395,29 @@ em,.it{font-style:normal}
    </li>
   </ol>
   <p class="fin">Sans injonction. <em>Chacun repart avec son propre chemin.</em></p>
+  <img class="photo band" src="img/photo3-option2a.webp" width="1600" height="1068" loading="lazy" alt="Un petit groupe de personnes marchant de dos sur un chemin herbeux">
  </div>
 </section>
 
-<!-- 6. CITATIONS -->
-<section class="sect voix" aria-labelledby="voix-title">
+<!-- 6. CADRE -->
+<section class="sect cadre" data-nav="chemin">
+ <div class="wrap grid">
+  <img class="photo" src="img/photo3-option1.webp" width="1280" height="1600" loading="lazy" alt="Deux personnes de dos sur un chemin de terre, entre les herbes hautes">
+  <h2 class="h2">Un petit groupe, <em>un lieu,</em> du temps</h2>
+  <ul>
+    <li><strong>10 à 12 agricultrices et agriculteurs</strong><span>Des filières, pratiques, âges et trajectoires différents.</span></li>
+    <li><strong>Deux jours à l’écart du quotidien</strong><span>Les résidences sont accueillies dans des lieux propices à la rencontre, aux échanges et à la prise de recul.</span></li>
+    <li><strong>Un cadre confidentiel et bienveillant</strong><span>Pour permettre une parole libre, dans le respect du rythme de chacun.</span></li>
+    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. Des parcours et des façons de voir différentes qui nourrissent les échanges.</span></li>
+  </ul>
+ </div>
+</section>
+
+<!-- 7. CITATIONS -->
+<section class="sect voix" data-nav="chemin" aria-labelledby="voix-title">
  <img class="photo band" src="img/photo1-option3.webp" width="1600" height="900" loading="lazy" alt="Trois personnes assises en silhouette au crépuscule">
  <div class="wrap grid">
-  <div>
+  <div id="experience">
    <h2 class="h2" id="voix-title">Ce sont les participant·es qui en parlent <em>le mieux</em></h2>
    <p class="general">Lors de la dernière résidence, les participant·es ont notamment parlé de la confiance créée dans le groupe, de la richesse de rencontrer des profils agricoles très différents, de la possibilité d’aborder des sujets rarement partagés et du sentiment de se sentir moins seul·e face à certains questionnements.</p>
   </div>
@@ -412,23 +435,9 @@ em,.it{font-style:normal}
  </div>
 </section>
 
-<!-- 7. CADRE -->
-<section class="sect cadre">
- <div class="wrap grid">
-  <img class="photo" src="img/photo3-option1.webp" width="1280" height="1600" loading="lazy" alt="Deux personnes de dos sur un chemin de terre, entre les herbes hautes">
-  <h2 class="h2">Un petit groupe, <em>un lieu,</em> du temps</h2>
-  <ul>
-    <li><strong>10 à 12 agricultrices et agriculteurs</strong><span>Des filières, pratiques, âges et trajectoires différents.</span></li>
-    <li><strong>Deux jours à l’écart du quotidien</strong><span>Les résidences sont accueillies dans des lieux propices à la rencontre, aux échanges et à la prise de recul.</span></li>
-    <li><strong>Un cadre confidentiel et bienveillant</strong><span>Pour permettre une parole libre, dans le respect du rythme de chacun.</span></li>
-    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. Des parcours et des façons de voir différentes qui nourrissent les échanges.</span></li>
-  </ul>
- </div>
-</section>
-
 <!-- 8. ORIGINE -->
 <img class="photo horizon" src="img/photo2-option3.webp" width="1600" height="1200" loading="lazy" alt="Ciel de coucher de soleil au-dessus d’une ligne de montagnes">
-<section class="sect origine" id="histoire">
+<section class="sect origine" id="histoire" data-nav="experience">
  <div class="wrap grid">
   <div class="left">
    <h2 class="h2">D’où vient cette <em>aventure ?</em></h2>
@@ -448,7 +457,7 @@ em,.it{font-style:normal}
 </section>
 
 <!-- 9. ÉQUIPE -->
-<section class="sect equipe" id="equipe">
+<section class="sect equipe" id="equipe" data-nav="experience">
  <div class="wrap grid">
   <div>
    <h2 class="h2">Qui <em>sommes-nous ?</em></h2>
@@ -469,7 +478,7 @@ em,.it{font-style:normal}
 </main>
 
 <!-- 10. CONTACT -->
-<footer class="sect contact" id="contact">
+<footer class="sect contact" id="contact" data-nav="experience">
  <div class="wrap">
   <h2 class="h2">Ce chemin ne s’arrête <em>pas ici.</em></h2>
   <div class="grid">
@@ -513,6 +522,25 @@ const PROCHAINE_RESIDENCE = {
  } else {
   withDate.hidden = true; noDate.hidden = false;
  }
+
+ // barre du haut : fond dès qu'on quitte le haut de page, rubrique en cours soulignée
+ var top = document.querySelector(".top");
+ var liens = {};
+ document.querySelectorAll(".top nav a").forEach(function (a) { liens[a.hash.slice(1)] = a; });
+ var sections = document.querySelectorAll("main .sect, #experience, .contact");
+ function suivi() {
+  top.classList.toggle("is-fixe", window.scrollY > 40);
+  var repere = top.offsetHeight + 40, actif = null;
+  sections.forEach(function (s) {
+   if (s.getBoundingClientRect().top <= repere) actif = s.dataset.nav || s.id;
+  });
+  Object.keys(liens).forEach(function (k) {
+   if (k === actif) liens[k].setAttribute("aria-current", "true");
+   else liens[k].removeAttribute("aria-current");
+  });
+ }
+ window.addEventListener("scroll", suivi, { passive: true });
+ suivi();
 
  var items = document.querySelectorAll(".reveal");
  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -578,7 +606,7 @@ PHOTOS → EMPLACEMENTS
  photo1-option1 ★ Hero (plein cadre, cadrage 44 % / 30 % pour garder le dos au centre)
  photo1-option2  « Et si vous vous accordiez deux jours ? » (format 4:5)
  photo2-option1 ★ Bloc « Prochaine résidence » (le chemin sous l’arc-en-ciel)
- photo3-option2a  « Deux jours, un chemin » (bandeau sous l’intro)
+ photo3-option2a  « Deux jours, un chemin » (bandeau sous « Sans injonction », retour Lou 01/11)
  photo1-option3  Bandeau d’ouverture de la section Citations (fond Nuit)
  photo3-option1  « Un petit groupe, un lieu, du temps » (portrait 4:5)
  photo2-option3  Bandeau d’horizon avant « D’où vient cette aventure ? »
