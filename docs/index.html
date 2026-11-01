@@ -100,7 +100,7 @@ html{scroll-padding-top:76px}
 .constats .cloture{margin-top:30px;color:var(--encre-2)}
 @media (min-width:900px){
  .constats .grid{grid-template-columns:5fr 7fr;gap:72px}
- .constats .left{position:sticky;top:48px;align-self:start}
+ .constats .left{position:sticky;top:104px;align-self:start}
 }
 
 /* 3. PROPOSITION */
@@ -222,11 +222,17 @@ html{scroll-padding-top:76px}
 .horizon{aspect-ratio:4/3;object-position:50% 40%}
 @media (min-width:760px){.horizon{aspect-ratio:3/1}}
 .origine .grid{display:grid;gap:36px}
-.motscles{list-style:none;margin:28px 0 0;padding:0;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25;color:var(--vert)}
+.motscles{list-style:none;margin:clamp(36px,5vw,64px) 0 0;padding:0;display:grid;gap:clamp(22px,4vw,52px);font-size:clamp(1.8rem,3.3vw,2.5rem);line-height:1.1;color:var(--vert)}
+/* nuage de mots, apparition un par un (retour Lou 01/11) */
+.motscles li:nth-child(1){justify-self:start}
+.motscles li:nth-child(2){justify-self:end}
+.motscles li:nth-child(3){justify-self:center}
+.motscles .reveal{transform:translateY(10px) scale(.92);transition-duration:.9s}
+.motscles .reveal.on{transform:none}
 .origine .txt{display:grid;gap:22px;max-width:62ch}
 @media (min-width:900px){
  .origine .grid{grid-template-columns:5fr 7fr;gap:72px}
- .origine .left{position:sticky;top:48px;align-self:start}
+ .origine .left{position:sticky;top:104px;align-self:start}
 }
 
 /* 9. ÉQUIPE */
@@ -480,10 +486,10 @@ html{scroll-padding-top:76px}
  <div class="wrap grid">
   <div class="left">
    <h2 class="h2">D’où vient cette <em>aventure ?</em></h2>
-   <ul class="motscles" aria-label="Trois questions qui guident la démarche">
-    <li>Cohésion</li>
-    <li>Cohérence</li>
-    <li>Capacité d’agir</li>
+   <ul class="motscles" data-pas="550" aria-label="Trois questions qui guident la démarche">
+    <li class="reveal">Cohésion</li>
+    <li class="reveal">Cohérence</li>
+    <li class="reveal">Capacité d’agir</li>
    </ul>
   </div>
   <div class="txt">
@@ -612,7 +618,7 @@ const PROCHAINE_RESIDENCE = {
   entries.forEach(function (e) {
    if (!e.isIntersecting) return;
    var sibs = Array.prototype.indexOf.call(e.target.parentNode.children, e.target);
-   e.target.style.transitionDelay = (sibs * 90) + "ms";
+   e.target.style.transitionDelay = (sibs * (Number(e.target.parentNode.dataset.pas) || 90)) + "ms";
    e.target.classList.add("on");
    io.unobserve(e.target);
   });
