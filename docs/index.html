@@ -109,7 +109,7 @@ html{scroll-padding-top:76px}
 .prop .h2{max-width:14ch}
 .prop .txt{display:grid;gap:22px;margin-top:30px;max-width:40ch}
 .prop .photo{aspect-ratio:4/5;object-position:58% 50%}
-.sans{list-style:none;margin:clamp(56px,8vw,96px) 0 0;padding:0;display:grid;gap:0}
+.sans{list-style:none;margin:clamp(32px,4vw,48px) 0 0;padding:0;display:grid;gap:0}
 .sans li{border-top:1px solid var(--encre);padding:22px 0 30px;font-size:clamp(1.5rem,2.6vw,1.9rem);line-height:1.2;font-variation-settings:"opsz" 40}
 .sans li em{color:var(--cuivre);font-style:normal;font-weight:600}
 @media (min-width:760px){
@@ -121,14 +121,17 @@ html{scroll-padding-top:76px}
 
 /* 4. PROCHAINE RÉSIDENCE */
 .next{padding-block:0}
-.next__box{display:grid;background:var(--creme-2);border:1px solid var(--cuivre-filet)}
+.next__box{display:grid;background:var(--creme-2);border:3px solid var(--cuivre-filet);box-shadow:0 18px 50px -18px rgba(35,32,28,.35)}
 .next__img{aspect-ratio:16/10;object-position:50% 70%}
-.next__txt{padding:clamp(28px,5vw,60px);display:flex;flex-direction:column;gap:18px;justify-content:center}
-.next__label{font-size:1.5rem;color:var(--cuivre)}
+.next__txt{padding:clamp(24px,3vw,36px) clamp(28px,5vw,60px);display:flex;flex-direction:column;gap:18px;justify-content:center}
+.next__label{font-size:clamp(1.75rem,3vw,2.25rem);color:var(--cuivre)}
 .next__date{font-size:clamp(2.3rem,6vw,4rem);line-height:1;letter-spacing:-.015em;font-variation-settings:"opsz" 72}
 .next__lieu{font-size:1.25rem}
 .next__wait{font-size:1.25rem;max-width:36ch}
 .next__txt .btn{align-self:flex-start;margin-top:10px}
+.next__autre{margin-top:14px;padding-top:24px;border-top:1px solid rgba(166,90,46,.45)}
+.next__autre h3{font-family:var(--serif);font-size:1.5rem;font-weight:500;line-height:1.2;margin-bottom:8px}
+.next__autre p{color:var(--encre-2);max-width:52ch}
 [hidden]{display:none!important}
 @media (min-width:900px){
  .next__box{grid-template-columns:5fr 7fr}
@@ -180,6 +183,11 @@ html{scroll-padding-top:76px}
 .quote{scroll-snap-align:start;background:#2E2A25;border-top:2px solid var(--cuivre-clair);padding:30px 28px 28px;margin:0;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:260px}
 .quote blockquote{margin:0;font-size:clamp(1.6rem,2.6vw,2rem);line-height:1.25;font-variation-settings:"opsz" 40}
 .quote figcaption{font-size:1rem;color:#B8AC9E}
+.quotes__nav{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:18px}
+.quotes__btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--cuivre-clair);background:transparent;color:var(--creme);font:inherit;font-size:1.25rem;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background-color .2s ease,opacity .2s ease}
+.quotes__btn:hover:not(:disabled){background:var(--cuivre)}
+.quotes__btn:disabled{opacity:.3;cursor:default}
+.quotes__count{color:#B8AC9E;min-width:5.5ch;text-align:center;font-variant-numeric:tabular-nums}
 .voix .hint{font-size:1rem;color:#B8AC9E;margin-top:8px}
 @media (min-width:760px){.voix .band{aspect-ratio:21/7}}
 @media (min-width:900px){
@@ -188,6 +196,8 @@ html{scroll-padding-top:76px}
  .voix .grid>div:last-child{display:flex;flex-direction:column}
  .quotes{flex:1;grid-auto-columns:calc(50% - 8px);margin-inline:0;padding-inline:0;padding-bottom:0;scroll-padding-inline:0}
  .quote{min-height:0;justify-content:center}
+ .quotes{scrollbar-width:none}
+ .quotes::-webkit-scrollbar{display:none}
 }
 
 /* 7. CADRE */
@@ -331,10 +341,14 @@ html{scroll-padding-top:76px}
     <h2 class="next__label" id="next-title">Prochaine résidence</h2>
     <div data-with-date>
      <p class="next__date" data-date>14 et 15 janvier 2027</p>
-     <p class="next__lieu" data-lieu style="margin-top:12px">Chez Emmanuel Ogier, à Gérigney</p>
+     <p class="next__lieu" data-lieu style="margin-top:12px">Chez Emmanuel Ogier, à Germigney</p>
     </div>
     <p class="next__wait" data-no-date hidden>Aucune date n’est programmée pour le moment. Les prochaines résidences se construisent au fil des groupes, des territoires et des opportunités. Vous pouvez, dès maintenant, nous faire part de votre intérêt, sans engagement.</p>
     <a class="btn" data-mail href="mailto:residence.agri@mail.com">Je suis intéressé·e</a>
+    <div class="next__autre" data-autre>
+     <h3>Une autre date, un autre territoire ?</h3>
+     <p>Vous êtes intéressé·e mais vous n’êtes pas disponible à ces dates, ou le Jura est trop éloigné ? Les prochaines résidences se construisent au fil des groupes, des territoires et des opportunités. N’hésitez pas à nous faire part de votre intérêt, sans engagement.</p>
+    </div>
    </div>
   </div>
  </div>
@@ -425,14 +439,34 @@ html{scroll-padding-top:76px}
    <p class="general">Lors de la dernière résidence, les participant·es ont notamment parlé de la confiance créée dans le groupe, de la richesse de rencontrer des profils agricoles très différents, de la possibilité d’aborder des sujets rarement partagés et du sentiment de se sentir moins seul·e face à certains questionnements.</p>
   </div>
   <div>
-   <!-- Ajouter / retirer des <figure class="quote"> : 2, 3 ou 5 citations, la rangée s’adapte -->
+   <!-- Témoignages verbatim (retour Lou 01/11) : ajouter / retirer des <figure class="quote">, les flèches et le compteur suivent -->
    <div class="quotes" tabindex="0" role="region" aria-label="Paroles de participants">
     <figure class="quote">
-     <blockquote>« Je ne suis pas seule. Des agriculteur·rices très différent·es se posent aussi des questions. Et c’est ok de vivre avec ses émotions. »</blockquote>
+     <blockquote>Une parenthèse dans le « train-train » du quotidien qui permet de libérer la parole mais aussi de débloquer des situations et/ou d’avancer vers d’autres projets.</blockquote>
     </figure>
     <figure class="quote">
-     <blockquote>« Une parenthèse dans le quotidien, qui libère la parole et permet d’avancer, sans obligation de résultat. »</blockquote>
+     <blockquote>Je ne suis pas seule.</blockquote>
     </figure>
+    <figure class="quote">
+     <blockquote>La bienveillance et la confiance que se sont accordés les participants.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>Une formation qui bouscule, qui nous fait sortir des chemins battus mais dont on ressort grandi et plus apaisé, plus serein pour ma part.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>Un plaisir d’échanger et de partager avec des personnes qui travaillent sur des modèles agricoles que je n’ai pas l’occasion de côtoyer.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>Des agriculteurs qui travaillent avec toutes les formes d’agriculture et tous modèles se posent des questions.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>La présence des médiatrices et personnes ressources qui nous ont permis de traverser ces réflexions et émotions et qui me permettent d’avancer sur mon projet.</blockquote>
+    </figure>
+   </div>
+   <div class="quotes__nav">
+    <button type="button" class="quotes__btn" data-dir="-1" aria-label="Témoignage précédent">←</button>
+    <span class="quotes__count" aria-live="polite"></span>
+    <button type="button" class="quotes__btn" data-dir="1" aria-label="Témoignage suivant">→</button>
    </div>
   </div>
  </div>
@@ -466,7 +500,7 @@ html{scroll-padding-top:76px}
    <h2 class="h2">Qui <em>sommes-nous ?</em></h2>
    <div class="txt">
     <p>La résidence est accompagnée par Juliette Young et Lou Lecuyer, chercheuses en sciences humaines à l’INRAE, avec Estelle Baillan, médiatrice professionnelle.</p>
-    <p>Les premières résidences ont également été accueillies par Emmanuel Ogier, agriculteur à Gérigney, qui y a partagé son propre cheminement, avec ses questionnements, ses choix et les évolutions de sa ferme.</p>
+    <p>Les premières résidences ont également été accueillies par Emmanuel Ogier, agriculteur à Germigney, qui y a partagé son propre cheminement, avec ses questionnements, ses choix et les évolutions de sa ferme.</p>
     <p class="muted">L’INRAE soutient financièrement l’organisation des résidences.</p>
    </div>
   </div>
@@ -474,7 +508,7 @@ html{scroll-padding-top:76px}
    <li><b>Juliette Young</b><span>Chercheuse en sciences humaines, INRAE</span></li>
    <li><b>Lou Lecuyer</b><span>Chercheuse en sciences humaines, INRAE</span></li>
    <li><b>Estelle Baillan</b><span>Médiatrice professionnelle</span></li>
-   <li><b>Emmanuel Ogier</b><span>Agriculteur à Gérigney, accueille la résidence</span></li>
+   <li><b>Emmanuel Ogier</b><span>Agriculteur à Germigney, accueille la résidence</span></li>
   </ul>
  </div>
 </section>
@@ -506,7 +540,7 @@ const CONTACT_EMAIL = "residence.agri@mail.com";
 
 const PROCHAINE_RESIDENCE = {
  date: "14 et 15 janvier 2027",      // ← null si aucune date
- lieu: "Chez Emmanuel Ogier, à Gérigney" // ← lieu d’accueil
+ lieu: "Chez Emmanuel Ogier, à Germigney" // ← lieu d’accueil
 };
 
 (function () {
@@ -525,6 +559,7 @@ const PROCHAINE_RESIDENCE = {
  } else {
   withDate.hidden = true; noDate.hidden = false;
  }
+ document.querySelector("[data-autre]").hidden = withDate.hidden;
 
  // barre du haut : fond dès qu'on quitte le haut de page, rubrique en cours soulignée
  var top = document.querySelector(".top");
@@ -544,6 +579,26 @@ const PROCHAINE_RESIDENCE = {
  }
  window.addEventListener("scroll", suivi, { passive: true });
  suivi();
+
+ // témoignages : flèches et compteur sur la rangée qui défile
+ var rail = document.querySelector(".quotes");
+ var cartes = rail.querySelectorAll(".quote");
+ var compteur = document.querySelector(".quotes__count");
+ var fleches = document.querySelectorAll(".quotes__btn");
+ function pas() { return cartes.length > 1 ? cartes[1].offsetLeft - cartes[0].offsetLeft : rail.clientWidth; }
+ function majTemoignages() {
+  var p = pas(), visibles = Math.max(1, Math.round((rail.clientWidth + 16) / p));
+  var i = Math.round(rail.scrollLeft / p), fin = Math.min(i + visibles, cartes.length);
+  compteur.textContent = (fin > i + 1 ? (i + 1) + "–" + fin : (i + 1)) + " / " + cartes.length;
+  fleches[0].disabled = rail.scrollLeft <= 2;
+  fleches[1].disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 2;
+ }
+ fleches.forEach(function (b) {
+  b.addEventListener("click", function () { rail.scrollBy({ left: pas() * Number(b.dataset.dir), behavior: "smooth" }); });
+ });
+ rail.addEventListener("scroll", majTemoignages, { passive: true });
+ window.addEventListener("resize", majTemoignages);
+ majTemoignages();
 
  var items = document.querySelectorAll(".reveal");
  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
