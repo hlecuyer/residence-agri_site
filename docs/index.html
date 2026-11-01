@@ -208,6 +208,8 @@ html{scroll-padding-top:76px}
 .cadre li{border-top:1px solid var(--encre);padding:22px 0 28px}
 .cadre li strong{display:block;font-weight:500;font-size:1.45rem;line-height:1.2;margin-bottom:8px}
 .cadre li span{color:var(--encre-2)}
+.cadre li{display:flex;flex-direction:column}
+.cadre .picto{width:56px;height:56px;margin:auto auto 0;padding-top:22px;box-sizing:content-box;fill:none;color:var(--cuivre);stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round} /* proposition retour Lou 01/11 */
 @media (min-width:760px){.cadre ul{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px}}
 @media (min-width:900px){
  .cadre .grid{grid-template-columns:5fr 7fr;grid-template-areas:"titre titre" "img liste";column-gap:72px;row-gap:clamp(26px,3.2vw,40px);align-items:stretch}
@@ -422,10 +424,10 @@ html{scroll-padding-top:76px}
   <img class="photo" src="img/photo3-option1.webp" width="1280" height="1600" loading="lazy" alt="Deux personnes de dos sur un chemin de terre, entre les herbes hautes">
   <h2 class="h2">Un petit groupe, <em>un lieu,</em> du temps</h2>
   <ul>
-    <li><strong>10 à 12 agricultrices et agriculteurs</strong><span>Des filières, pratiques, âges et trajectoires différents.</span></li>
-    <li><strong>Deux jours à l’écart du quotidien</strong><span>Les résidences sont accueillies dans des lieux propices à la rencontre, aux échanges et à la prise de recul.</span></li>
-    <li><strong>Un cadre confidentiel et bienveillant</strong><span>Pour permettre une parole libre, dans le respect du rythme de chacun.</span></li>
-    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. Des parcours et des façons de voir différentes qui nourrissent les échanges.</span></li>
+    <li><strong>10 à 12 agricultrices et agriculteurs</strong><span>Des filières, pratiques, âges et trajectoires différents.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="5"/><path d="M14 37c0-6 4.5-10 10-10s10 4 10 10"/><circle cx="10.5" cy="19" r="4"/><path d="M3 37c0-5 3.3-8.5 7.5-8.5 1.6 0 3 .4 4.2 1.2"/><circle cx="37.5" cy="19" r="4"/><path d="M45 37c0-5-3.3-8.5-7.5-8.5-1.6 0-3 .4-4.2 1.2"/></svg></li>
+    <li><strong>Deux jours à l’écart du quotidien</strong><span>Les résidences sont accueillies dans des lieux propices à la rencontre, aux échanges et à la prise de recul.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 36a10 10 0 0 1 20 0"/><path d="M4 36h40M24 18v4M11.3 23.3l2.8 2.8M36.7 23.3l-2.8 2.8M6 33h3M39 33h3"/><path d="M10 41h28" opacity=".55"/></svg></li>
+    <li><strong>Un cadre confidentiel et bienveillant</strong><span>Pour permettre une parole libre, dans le respect du rythme de chacun.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 9h30a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H22l-8 7v-7H9a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z"/><circle cx="19.5" cy="17.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="28.5" cy="17.5" r="1.4" fill="currentColor" stroke="none"/><path d="M18 22.5c1.5 2.4 3.6 3.6 6 3.6s4.5-1.2 6-3.6"/></svg></li>
+    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. Des parcours et des façons de voir différentes qui nourrissent les échanges.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 40h38"/><path d="M13 40V17M13 22l-3.2-3.2M13 22l3.2-3.2M13 27.5l-3.2-3.2M13 27.5l3.2-3.2M13 33l-3.2-3.2M13 33l3.2-3.2"/><path d="M24 40V26M24 31c-5.5 0-7.5-3.5-7.5-7.5 4.5 0 7.5 3 7.5 7.5zM24 27c0-4.5 3-7.5 7.5-7.5 0 4-2 7.5-7.5 7.5z"/><path d="M36 40v-9"/><circle cx="36" cy="24.5" r="6.5"/></svg></li>
   </ul>
  </div>
 </section>
