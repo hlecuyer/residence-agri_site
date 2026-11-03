@@ -144,6 +144,8 @@ html{scroll-padding-top:76px}
 .deroule{padding-bottom:0}
 .cadre{padding-top:clamp(56px,7vw,96px)}
 .deroule .band{margin-top:clamp(40px,6vw,72px);aspect-ratio:709/473;width:100%;max-width:709px;margin-inline:auto;object-position:50% 50%}
+/* la bande fleurie est masquée en mobile : elle s’enchaînait avec la photo du cadre */
+@media (max-width:899px){.deroule .band{display:none}}
 /* Frise : ligne verticale en segments, numéro posé sur la ligne, alternance gauche / droite en desktop */
 .steps{--ligne:24px;--h3:clamp(2rem,3.6vw,2.75rem);--gap-etape:clamp(24px,3vw,44px);--num:calc(var(--h3)*.51);--ligne-depart:calc(108px + var(--num));list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;position:relative;display:grid;gap:var(--gap-etape)}
 .step{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr);grid-template-areas:". pic" "num txt";column-gap:18px;row-gap:18px;align-items:start}
@@ -234,7 +236,7 @@ html{scroll-padding-top:76px}
 .equipe{padding-top:0}
 .equipe .grid{display:grid;gap:40px;border-top:1px solid var(--encre);padding-top:clamp(48px,7vw,80px)}
 .equipe .txt{display:grid;gap:18px;max-width:52ch;margin-top:26px;justify-items:start}
-.logo-inrae{width:min(230px,60%);height:auto;margin-top:10px}
+.logo-inrae{width:min(230px,60%);height:auto;margin-top:10px;justify-self:center}
 .noms{list-style:none;margin:0;padding:0;display:grid;gap:22px}
 .noms b{display:block;font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.1;font-variation-settings:"opsz" 48}
 .noms span{font-size:1.0625rem;color:var(--encre-2)}
@@ -764,6 +766,8 @@ PHOTOS
                              ratio 709:473 conservé (1,499), largeur plafonnée à
                              709 px et centrée : plus aucun recadrage, la photo
                              s’affiche au format de la source (709 x 473 px)
+                             masquée sous 900 px : en mobile elle s’enchaînait avec
+                             la photo du cadre (« Un petit groupe, un lieu, du temps »)
                              (une bande de fleurs semée au milieu de la parcelle)
  étape 1 « Partir des vécus »  etape1-vecus.jpg  ->  etape1-terre.jpg (mains + mottes)
  étape 3 « Prendre du recul »  etape3-recul.jpg  ->  etape3-bottes.jpg (bottes + clocher)
@@ -803,7 +807,8 @@ CARROUSEL
                              résidences » -> « Le financement de l’organisation
                              des résidences vient de l’INRAE, UMR agroécologie »
  .logo-inrae ............... ajouté sous le texte équipe, 230 px (60 % en mobile),
-                             fichier docs/img/logo-inrae.png (extrait du pptx)
+                             fichier docs/img/logo-inrae.png (extrait du pptx),
+                             centré sur la colonne de texte (justify-self:center)
  CONTACT_EMAIL + 4 liens ... residence.agri@mail.com -> residence.agri@gmail.com
 ==========================================================================
 -->
