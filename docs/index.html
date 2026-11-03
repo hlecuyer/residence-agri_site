@@ -109,7 +109,7 @@ html{scroll-padding-top:76px}
 .prop .h2{max-width:14ch}
 .prop .txt{display:grid;gap:22px;margin-top:30px;max-width:40ch}
 .prop .photo{aspect-ratio:4/5;object-position:58% 50%}
-.sans{list-style:none;margin:clamp(32px,4vw,48px) 0 0;padding:0;display:grid;gap:0}
+.sans{list-style:none;margin:clamp(20px,2.4vw,28px) 0 0;padding:0;display:grid;gap:0}
 .sans li{border-top:1px solid var(--encre);padding:22px 0 30px;font-size:clamp(1.5rem,2.6vw,1.9rem);line-height:1.2;font-variation-settings:"opsz" 40}
 .sans li em{color:var(--cuivre);font-style:normal;font-weight:600}
 @media (min-width:760px){
@@ -173,9 +173,8 @@ html{scroll-padding-top:76px}
 }
 
 /* 6. CITATIONS */
-.voix{background:var(--nuit);color:var(--creme);padding-top:0}
-.voix .band{aspect-ratio:16/9;object-position:50% 70%;opacity:.9}
-.voix .grid{display:grid;gap:44px;padding-top:clamp(56px,8vw,104px)}
+.voix{background:var(--nuit);color:var(--creme)}
+.voix .grid{display:grid;gap:44px;padding-top:0}
 .voix .grid>div{min-width:0}
 .voix .h2 em{color:var(--cuivre-clair)}
 .voix .general{margin-top:28px;color:#C9BFB2;max-width:38ch}
@@ -189,7 +188,6 @@ html{scroll-padding-top:76px}
 .quotes__btn:disabled{opacity:.3;cursor:default}
 .quotes__count{color:#B8AC9E;min-width:5.5ch;text-align:center;font-variant-numeric:tabular-nums}
 .voix .hint{font-size:1rem;color:#B8AC9E;margin-top:8px}
-@media (min-width:760px){.voix .band{aspect-ratio:21/7}}
 @media (min-width:900px){
  .voix .grid{grid-template-columns:5fr 7fr;gap:72px;align-items:stretch}
  .voix .h2{font-size:clamp(2.3rem,4.7vw,3.7rem)}
@@ -238,7 +236,8 @@ html{scroll-padding-top:76px}
 /* 9. ÉQUIPE */
 .equipe{padding-top:0}
 .equipe .grid{display:grid;gap:40px;border-top:1px solid var(--encre);padding-top:clamp(48px,7vw,80px)}
-.equipe .txt{display:grid;gap:18px;max-width:52ch;margin-top:26px}
+.equipe .txt{display:grid;gap:18px;max-width:52ch;margin-top:26px;justify-items:start}
+.logo-inrae{width:min(230px,60%);height:auto;margin-top:10px}
 .noms{list-style:none;margin:0;padding:0;display:grid;gap:22px}
 .noms b{display:block;font-size:clamp(1.6rem,3vw,2.1rem);line-height:1.1;font-variation-settings:"opsz" 48}
 .noms span{font-size:1.0625rem;color:var(--encre-2)}
@@ -292,7 +291,7 @@ html{scroll-padding-top:76px}
   <div class="hero__row">
    <p class="hero__accroche">Deux jours pour s’arrêter, prendre du recul et regarder autrement le chemin devant soi.</p>
    <div class="hero__cta">
-    <a class="btn" data-mail href="mailto:residence.agri@mail.com">Je suis intéressé·e</a>
+    <a class="btn" data-mail href="mailto:residence.agri@gmail.com">Je suis intéressé·e</a>
     <a class="textlink" href="#residence">Découvrir la résidence ↓</a>
    </div>
   </div>
@@ -352,7 +351,7 @@ html{scroll-padding-top:76px}
      <p class="next__lieu" data-lieu style="margin-top:12px">Chez Emmanuel Ogier, à Germigney</p>
     </div>
     <p class="next__wait" data-no-date hidden>Aucune date n’est programmée pour le moment. Les prochaines résidences se construisent au fil des groupes, des territoires et des opportunités. Vous pouvez, dès maintenant, nous faire part de votre intérêt, sans engagement.</p>
-    <a class="btn" data-mail href="mailto:residence.agri@mail.com">Je suis intéressé·e</a>
+    <a class="btn" data-mail href="mailto:residence.agri@gmail.com">Je suis intéressé·e</a>
     <div class="next__autre" data-autre>
      <h3>Une autre date, un autre territoire ?</h3>
      <p>Vous êtes intéressé·e mais vous n’êtes pas disponible à ces dates, ou le Jura est trop éloigné ? Les prochaines résidences se construisent au fil des groupes, des territoires et des opportunités. N’hésitez pas à nous faire part de votre intérêt, sans engagement.</p>
@@ -372,7 +371,7 @@ html{scroll-padding-top:76px}
   <ol class="steps">
    <li class="step reveal">
     <span class="step__num" aria-hidden="true">1.</span>
-    <div class="step__pic"><img src="img/etape1-vecus.jpg" width="760" height="570" loading="lazy" alt="Des bottes de paille empilées derrière une remorque rouge"></div>
+    <div class="step__pic"><img src="img/etape1-terre.jpg" width="760" height="570" loading="lazy" alt="Deux mains tenant des mottes de terre au-dessus d’un champ labouré"></div>
     <div class="step__txt">
     <h3>Partir des vécus</h3>
     <p>Mettre en mots des situations de la ferme ou de son outil de travail, et ce qu’elles révèlent de tensions, de doutes ou de fierté.</p>
@@ -388,7 +387,7 @@ html{scroll-padding-top:76px}
    </li>
    <li class="step reveal">
     <span class="step__num" aria-hidden="true">3.</span>
-    <div class="step__pic"><img src="img/etape3-recul.jpg" width="760" height="570" loading="lazy" alt="Le village et la vallée vus depuis un belvédère"></div>
+    <div class="step__pic"><img src="img/etape3-bottes.jpg" width="760" height="570" loading="lazy" alt="Des bottes de paille rondes dans un champ moissonné, un village et son clocher au fond"></div>
     <div class="step__txt">
     <h3>Prendre du recul</h3>
     <p>Découvrir quelques outils et espaces pour regarder autrement une situation.</p>
@@ -407,20 +406,20 @@ html{scroll-padding-top:76px}
     <div class="step__pic"><img src="img/etape5-nous.jpg" width="760" height="570" loading="lazy" alt="Des ruches alignées au bord d’un pré, au printemps"></div>
     <div class="step__txt">
     <h3>Du « je » au « nous »</h3>
-    <p>Imaginer ce qui ne dépend pas de soi, ce qui peut se construire avec d’autres, ce qui nous échappe.</p>
+    <p>Distinguer ce qui ne dépend pas de soi, ce qui peut se construire avec d’autres, ce qui nous échappe.</p>
     </div>
    </li>
    <li class="step reveal">
     <span class="step__num" aria-hidden="true">6.</span>
-    <div class="step__pic"><img src="img/etape6-suite.jpg" width="760" height="570" loading="lazy" alt="Un champ de blé mûr sous un ciel de traîne"></div>
+    <div class="step__pic"><img src="img/etape6-moissonneuse.jpg" width="760" height="570" loading="lazy" alt="Une moissonneuse-batteuse dans un champ de blé mûr, collines boisées au fond"></div>
     <div class="step__txt">
     <h3>Ouvrir la suite</h3>
-    <p>Prendre un temps pour regarder ce que l’on voudrait, peut-être, imaginer ou modifier pour la suite.</p>
+    <p>Prendre un temps pour regarder ce que l’on souhaite garder et, peut-être, imaginer quelques petits pas pour la suite.</p>
     </div>
    </li>
   </ol>
   <p class="fin">Sans injonction. <em>Chacun repart avec son propre chemin.</em></p>
-  <img class="photo band" src="img/photo3-option2a.webp" width="1600" height="1068" loading="lazy" alt="Un petit groupe de personnes marchant de dos sur un chemin herbeux">
+  <img class="photo band" src="img/bande-fleurie.jpg" width="709" height="473" loading="lazy" alt="Une bande de fleurs sauvages semée au milieu d’une parcelle verte">
  </div>
 </section>
 
@@ -433,14 +432,13 @@ html{scroll-padding-top:76px}
     <li><strong>10 à 12 agricultrices et agriculteurs</strong><span>Des filières, pratiques, âges et trajectoires différents.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="15" r="5"/><path d="M14 37c0-6 4.5-10 10-10s10 4 10 10"/><circle cx="10.5" cy="19" r="4"/><path d="M3 37c0-5 3.3-8.5 7.5-8.5 1.6 0 3 .4 4.2 1.2"/><circle cx="37.5" cy="19" r="4"/><path d="M45 37c0-5-3.3-8.5-7.5-8.5-1.6 0-3 .4-4.2 1.2"/></svg></li>
     <li><strong>Deux jours à l’écart du quotidien</strong><span>Les résidences sont accueillies dans des lieux propices à la rencontre, aux échanges et à la prise de recul.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 36a10 10 0 0 1 20 0"/><path d="M4 36h40M24 18v4M11.3 23.3l2.8 2.8M36.7 23.3l-2.8 2.8M6 33h3M39 33h3"/><path d="M10 41h28" opacity=".55"/></svg></li>
     <li><strong>Un cadre confidentiel et bienveillant</strong><span>Pour permettre une parole libre, dans le respect du rythme de chacun.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 9h30a4 4 0 0 1 4 4v15a4 4 0 0 1-4 4H22l-8 7v-7H9a4 4 0 0 1-4-4V13a4 4 0 0 1 4-4z"/><circle cx="19.5" cy="17.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="28.5" cy="17.5" r="1.4" fill="currentColor" stroke="none"/><path d="M18 22.5c1.5 2.4 3.6 3.6 6 3.6s4.5-1.2 6-3.6"/></svg></li>
-    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. Des parcours et des façons de voir différentes qui nourrissent les échanges.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 40h38"/><path d="M13 40V17M13 22l-3.2-3.2M13 22l3.2-3.2M13 27.5l-3.2-3.2M13 27.5l3.2-3.2M13 33l-3.2-3.2M13 33l3.2-3.2"/><path d="M24 40V26M24 31c-5.5 0-7.5-3.5-7.5-7.5 4.5 0 7.5 3 7.5 7.5zM24 27c0-4.5 3-7.5 7.5-7.5 0 4-2 7.5-7.5 7.5z"/><path d="M36 40v-9"/><circle cx="36" cy="24.5" r="6.5"/></svg></li>
+    <li><strong>Une résidence ouverte à la diversité</strong><span>Aucun modèle agricole n’est privilégié. C’est la rencontre entre des parcours et des façons de voir différentes qui nourrit les échanges.</span><svg class="picto" viewBox="0 0 48 48" aria-hidden="true"><path d="M5 40h38"/><path d="M13 40V17M13 22l-3.2-3.2M13 22l3.2-3.2M13 27.5l-3.2-3.2M13 27.5l3.2-3.2M13 33l-3.2-3.2M13 33l3.2-3.2"/><path d="M24 40V26M24 31c-5.5 0-7.5-3.5-7.5-7.5 4.5 0 7.5 3 7.5 7.5zM24 27c0-4.5 3-7.5 7.5-7.5 0 4-2 7.5-7.5 7.5z"/><path d="M36 40v-9"/><circle cx="36" cy="24.5" r="6.5"/></svg></li>
   </ul>
  </div>
 </section>
 
 <!-- 7. CITATIONS -->
 <section class="sect voix" data-nav="chemin" aria-labelledby="voix-title">
- <img class="photo band" src="img/photo1-option3.webp" width="1600" height="900" loading="lazy" alt="Trois personnes assises en silhouette au crépuscule">
  <div class="wrap grid">
   <div id="experience">
    <h2 class="h2" id="voix-title">Ce sont les participant·es qui en parlent <em>le mieux</em></h2>
@@ -450,16 +448,16 @@ html{scroll-padding-top:76px}
    <!-- Témoignages verbatim (retour Lou 01/11) : ajouter / retirer des <figure class="quote">, les flèches et le compteur suivent -->
    <div class="quotes" tabindex="0" role="region" aria-label="Paroles de participants">
     <figure class="quote">
-     <blockquote>Une parenthèse dans le « train-train » du quotidien qui permet de libérer la parole mais aussi de débloquer des situations et/ou d’avancer vers d’autres projets.</blockquote>
-    </figure>
-    <figure class="quote">
-     <blockquote>Je ne suis pas seule.</blockquote>
-    </figure>
-    <figure class="quote">
      <blockquote>La bienveillance et la confiance que se sont accordés les participants.</blockquote>
     </figure>
     <figure class="quote">
      <blockquote>Une formation qui bouscule, qui nous fait sortir des chemins battus mais dont on ressort grandi et plus apaisé, plus serein pour ma part.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>Une parenthèse dans le « train-train » du quotidien qui permet de libérer la parole mais aussi de débloquer des situations et/ou d’avancer vers d’autres projets.</blockquote>
+    </figure>
+    <figure class="quote">
+     <blockquote>Je ne suis pas seule.</blockquote>
     </figure>
     <figure class="quote">
      <blockquote>Un plaisir d’échanger et de partager avec des personnes qui travaillent sur des modèles agricoles que je n’ai pas l’occasion de côtoyer.</blockquote>
@@ -493,10 +491,11 @@ html{scroll-padding-top:76px}
    </ul>
   </div>
   <div class="txt">
-   <p class="lead">L’idée est née dans le prolongement du projet de recherche TRANSAFORM, qui a mis en lumière de multiples malaises vécus dans le quotidien du travail agricole : différentes formes de pression, de marginalisation et de manque de reconnaissance vécues par les agriculteur·rices, ainsi qu’un affaiblissement de la cohésion au sein du monde agricole.</p>
-   <p>Une autre source d’inspiration est venue d’expériences menées auprès de communautés autochtones en Australie du Sud et du dalang indonésien : avant de chercher à réagir avec des acteurs en difficulté, il importe de soutenir leur capacité à être, à donner du sens à leur métier, puis de renforcer les liens pour retrouver une capacité d’agir collectivement.</p>
-   <p>Dans ce cadre, une première série de deux jours a réuni 12 agricultrices et agriculteurs en 2022 en Bourgogne-Franche-Comté. De cette expérience et des rencontres qui ont suivi est née l’envie de poursuivre et d’enrichir le cheminement avec les résidences « En quête d’avenir ».</p>
-   <p>Avec, en filigrane, trois questions qui continuent de guider la démarche : la cohésion, la cohérence et la capacité d’agir. Demain, d’autres résidences pourront voir le jour ailleurs, au gré des territoires, des rencontres et des opportunités.</p>
+   <p>L’élan à l’origine des résidences est né dans le prolongement du projet de recherche TRANSFORM, qui s’est intéressé aux conflits et aux transformations traversant le monde agricole. Ces travaux ont notamment mis en lumière différentes formes de pression, de marginalisation et de manque de reconnaissance vécues par les agriculteurs, ainsi qu’un affaiblissement de la cohésion au sein du monde agricole.</p>
+   <p>Une autre source d’inspiration est venue d’expériences menées auprès de communautés autochtones en Amérique du Sud autour du dialogue interculturel : avant de chercher à dialoguer avec des acteurs extérieurs, il peut être nécessaire de recréer des espaces de dialogue au sein même d’un groupe, de renforcer les liens et de retrouver une capacité à agir collectivement.</p>
+   <p>Dans ce cadre, un premier atelier de deux jours a réuni 12 agricultrices et agriculteurs en 2022 en Bourgogne-Franche-Comté. De cette expérience et des rencontres qui ont suivi est née l’envie de poursuivre le chemin à travers les résidences « En quête d’avenir ».</p>
+   <p>Avec, en filigrane, trois questions qui continuent de guider la démarche : la cohésion, la cohérence et la capacité d’agir.</p>
+   <p>Les premières résidences ont été accueillies à Germigney, dans le Jura, chez Emmanuel Ogier. Demain, d’autres pourront voir le jour ailleurs, au gré des territoires, des rencontres et des opportunités.</p>
   </div>
  </div>
 </section>
@@ -507,15 +506,16 @@ html{scroll-padding-top:76px}
   <div>
    <h2 class="h2">Qui <em>sommes-nous ?</em></h2>
    <div class="txt">
-    <p>La résidence est accompagnée par Juliette Young et Lou Lecuyer, chercheuses en sciences humaines à l’INRAE, avec Estelle Baillan, médiatrice professionnelle.</p>
+    <p>La résidence est accompagnée par Juliette Young et Lou Lecuyer, chercheuses en sciences humaines à l’INRAE, avec Estelle Balian, médiatrice professionnelle.</p>
     <p>Les premières résidences ont également été accueillies par Emmanuel Ogier, agriculteur à Germigney, qui y a partagé son propre cheminement, avec ses questionnements, ses choix et les évolutions de sa ferme.</p>
-    <p class="muted">L’INRAE soutient financièrement l’organisation des résidences.</p>
+    <p class="muted">Le financement de l’organisation des résidences vient de l’INRAE, UMR agroécologie.</p>
+    <img class="logo-inrae" src="img/logo-inrae.png" width="1024" height="271" loading="lazy" alt="INRAE">
    </div>
   </div>
   <ul class="noms">
    <li><b>Juliette Young</b><span>Chercheuse en sciences humaines, INRAE</span></li>
    <li><b>Lou Lecuyer</b><span>Chercheuse en sciences humaines, INRAE</span></li>
-   <li><b>Estelle Baillan</b><span>Médiatrice professionnelle</span></li>
+   <li><b>Estelle Balian</b><span>Médiatrice professionnelle</span></li>
    <li><b>Emmanuel Ogier</b><span>Agriculteur à Germigney, accueille la résidence</span></li>
   </ul>
  </div>
@@ -532,8 +532,8 @@ html{scroll-padding-top:76px}
     <p class="soft">Envie de participer ou simplement d’en savoir plus ? Vous pouvez nous écrire pour poser une question, manifester votre intérêt ou imaginer une résidence sur votre territoire.</p>
    </div>
    <div style="display:grid;gap:22px;justify-items:start">
-    <a class="mail" data-mail data-mail-text href="mailto:residence.agri@mail.com">residence.agri@mail.com</a>
-    <a class="btn" data-mail href="mailto:residence.agri@mail.com">Je suis intéressé·e / J’ai une question</a>
+    <a class="mail" data-mail data-mail-text href="mailto:residence.agri@gmail.com">residence.agri@gmail.com</a>
+    <a class="btn" data-mail href="mailto:residence.agri@gmail.com">Je suis intéressé·e / J’ai une question</a>
    </div>
   </div>
   <div class="foot">
@@ -544,7 +544,7 @@ html{scroll-padding-top:76px}
 </footer>
 
 <script>
-const CONTACT_EMAIL = "residence.agri@mail.com";
+const CONTACT_EMAIL = "residence.agri@gmail.com";
 
 const PROCHAINE_RESIDENCE = {
  date: "14 et 15 janvier 2027",      // ← null si aucune date
@@ -672,8 +672,8 @@ PHOTOS → EMPLACEMENTS
  photo1-option1 ★ Hero (plein cadre, cadrage 44 % / 30 % pour garder le dos au centre)
  photo1-option2  « Et si vous vous accordiez deux jours ? » (format 4:5)
  photo2-option1 ★ Bloc « Prochaine résidence » (le chemin sous l’arc-en-ciel)
- photo3-option2a  « Deux jours, un chemin » (bandeau sous « Sans injonction », retour Lou 01/11)
- photo1-option3  Bandeau d’ouverture de la section Citations (fond Nuit)
+ photo3-option2a  retirée le 02/11 (retour Lou), remplacée par bande-fleurie.jpg
+ photo1-option3  retirée le 02/11 (retour Lou) : plus de bandeau en ouverture des Citations
  photo3-option1  « Un petit groupe, un lieu, du temps » (portrait 4:5)
  photo2-option3  Bandeau d’horizon avant « D’où vient cette aventure ? »
  photo2-option2  Non utilisée : le jaune colza se bat avec le cuivre.
@@ -755,6 +755,56 @@ CORRECTIF 3 · la frise des étapes
 Les constantes PROCHAINE_RESIDENCE / CONTACT_EMAIL, les attributs data-,
 les loading="lazy", width/height, alt, l’animation reveal et
 prefers-reduced-motion sont inchangés.
+==========================================================================
+-->
+
+<!--
+==========================================================================
+RETOURS LOU · 02/11/2026 (pptx « Retour site internet v2 », 10 slides)
+--------------------------------------------------------------------------
+PHOTOS
+ .deroule .band ............ photo3-option2a.webp  ->  bande-fleurie.jpg
+                             (une bande de fleurs semée au milieu de la parcelle)
+ étape 1 « Partir des vécus »  etape1-vecus.jpg  ->  etape1-terre.jpg (mains + mottes)
+ étape 3 « Prendre du recul »  etape3-recul.jpg  ->  etape3-bottes.jpg (bottes + clocher)
+ étape 6 « Ouvrir la suite »   etape6-suite.jpg  ->  etape6-moissonneuse.jpg
+ .voix .band ............... SUPPRIMÉ : plus de photo silhouette en ouverture de
+                             la section Citations. .voix reprend padding-top normal,
+                             les règles .voix .band (mobile et 760px) sont retirées.
+
+TEXTES
+ .prop .txt p (2e para) .... déjà au même corps que le 1er depuis le 01/11
+                             (20,8 px à 1243), rien à changer : vérifié.
+ .sans margin-top .......... clamp(32px,4vw,48px)  ->  clamp(20px,2.4vw,28px)
+                             écart photo / 3 affirmations : 48 px -> 28 px à 1243.
+ étape 5 ................... « Imaginer ce qui ne dépend pas de soi » ->
+                             « Distinguer ce qui ne dépend pas de soi »
+ étape 6 ................... « regarder ce que l’on voudrait, peut-être, imaginer
+                             ou modifier pour la suite » -> « regarder ce que l’on
+                             souhaite garder et, peut-être, imaginer quelques
+                             petits pas pour la suite »
+ 4e bloc du cadre .......... « Des parcours et des façons de voir différentes qui
+                             nourrissent les échanges » -> « C’est la rencontre
+                             entre des parcours et des façons de voir différentes
+                             qui nourrit les échanges »
+ Origine ................... texte remplacé par le corrigé de Lou, TRANSAFORM ->
+                             TRANSFORM, 5 paragraphes tous au même corps
+                             (le 1er n’est plus .lead). Fin de paragraphe sur les
+                             opportunités conservée telle quelle.
+
+CARROUSEL
+ Ordre des 7 témoignages ... 3 et 4 remontés en 1re et 2e position (bienveillance
+                             et confiance / formation qui bouscule), le reste
+                             dans l’ordre d’origine.
+
+ÉQUIPE ET CONTACT
+ .noms / .txt .............. Estelle Baillan -> Estelle Balian (2 occurrences)
+ financement ............... « L’INRAE soutient financièrement l’organisation des
+                             résidences » -> « Le financement de l’organisation
+                             des résidences vient de l’INRAE, UMR agroécologie »
+ .logo-inrae ............... ajouté sous le texte équipe, 230 px (60 % en mobile),
+                             fichier docs/img/logo-inrae.png (extrait du pptx)
+ CONTACT_EMAIL + 4 liens ... residence.agri@mail.com -> residence.agri@gmail.com
 ==========================================================================
 -->
 </body>
